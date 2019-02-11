@@ -1,0 +1,195 @@
+/*! minireset.css v0.0.4 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}img,embed,iframe,object,video{height:auto;max-width:100%}audio{max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0;text-align:left}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  display: grid;
+  width: auto;
+  grid-template-columns: 9fr auto;
+  grid-template-rows: 50px auto;
+  grid-template-areas: "header header"
+                       "content side-bar";
+}
+
+header {
+  background: #6D7993;
+  grid-area: header;
+  position: fixed;
+  height: 50px;
+  width: 100%;
+}
+
+
+/* Sidebar Stuff */
+
+#side-bar-button {
+  position: absolute;
+  background: #6D7993;
+  width: 50px;
+  height: 50px;
+  right: 0px;
+  color: white;
+  padding: 5px 13px;
+  border-style: none;
+  font-size: 25px;
+}
+
+#side-bar-button:hover {
+  outline: none;
+}
+
+#side-bar-button {
+  outline: none;
+}
+
+
+#side-bar {
+  background: white;
+  grid-area: side-bar;
+  width: 200px;
+  /* position: fixed; */
+  display: none;
+}
+
+.buttons {
+  display: block;
+  color: black;
+  font-size: 25px;
+  font-family: Montserrat, sans-serif;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+}
+
+#actual-sidebar {
+  position: fixed;
+  right: 0px;
+  margin-top: 50px;
+  display: none;
+}
+
+
+h1 {
+  padding-left: 15px;
+  padding-top: 15px;
+  font-weight: bold;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  padding: 10px;
+}
+
+h3 {
+  position: absolute;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 30px;
+  color: #6D7993;
+  height: 50px;
+  width: 100%;
+  text-align: center;
+}
+
+h4 {
+  font-size: 16px;
+  margin-top: 60px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #D5D5D5;
+  height: 50px;
+  margin-top: 50px;
+  margin-left: 25px;
+
+}
+/* Body Styles */
+
+p {
+  max-width: 1000px;
+  width: 100%;
+  margin: 100px 25px;
+
+}
+
+.intro {
+  background: #9099A2;
+}
+
+ol {
+  margin-left: 100px;
+}
+
+.intro p {
+  margin: 20px 50px;
+}
+
+#inputfile {
+  display: block;
+  margin: 15px auto;
+}
+
+
+.content {
+  background:#D5D5D5;
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart2 {
+  background: #96858F;
+  display: flex;
+}
+
+.chart1 {
+  background: #D5D5D5;
+  display: flex;
+}
+
+.bar-chart {
+  display: block;
+  background: #96858F;
+  min-width: 300px;
+  height: 386px;
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.bar1 {
+  margin-left: 72.25px;
+  margin-right: 0;
+}
+
+.bar2 {
+  margin-left: 0;
+  margin-right: 72.25px;
+}
+
+ .bubbles {
+   background: #D5D5D5;
+   display: block;
+   margin: 50px 0;
+   margin-left: 50px;
+   /* width: 500px;
+   height: 300px; */
+ }
+
+ .interface {
+   width: 350px;
+   margin: 100px auto;
+   display: block;
+   opacity: 0;
+ }

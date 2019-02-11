@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Messenger History Visualised</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link href="styles/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body onload="startup()">
+      <div class="container">
+        <header>
+          <button id="side-bar-button" onclick="openSidebar()" onmouseover="menuHoverOn(this)" onmouseleave="menuHoverOff(this)">☰</button>
+          <h1>Messenger History Visualised</h1>
+        </header>
+        <div class="content">
+          <div class="intro">
+            <h1>Introduction: Visualise your Messenger History</h1>
+            <p>
+              This website was made to visualise random findings from your Facebook Messenger history.
+              To see these findings, follow the instructions below:
+            </p>
+            <ol>
+              <li>Download your facebook message information as a JSON file.</li>
+              <li>Unzip and choose the file below.</li>
+            </ol>
+
+            <input id="inputfile" type="file" name="file" value="file" webkitdirectory="true" onchange="parseData(this)">
+          </div>
+          <div class="chart2" id="bubbleChart">
+            <svg class="bubbles"></svg>
+            <div>
+              <h5>Who sends you the most messages?</h5>
+              <div class="interface">Interface</div>
+            </div>
+          </div>
+          <div class="chart1" id="barChart">
+            <h3>What day do you send and receive the most messages?</h3>
+            <div>
+              <h4 style="margin-left: 90px;">Messages Received</h4>
+              <svg class="bar-chart bar1"></svg>
+            </div>
+            <p>Which day are you most popular?<br>
+              Hover over for more details!
+            </p>
+            <div>
+              <h4>Messages Sent</h4>
+              <svg class="bar-chart bar2"></svg>
+            </div>
+          </div>
+        </div>
+        <div id="side-bar">
+
+        </div>
+        <div id="actual-sidebar">
+          <h2>Charts</h2>
+          <a href="#bubbleChart" class="buttons">Bubble Chart</a>
+          <a href="#barChart" class="buttons">Bar Chart</a>
+        </div>
+      </div>
+      <script src="scripts/d3.js"></script>  <!-- Version 5 -->
+      <script src="scripts/parser.js"></script>
+      <script src="scripts/main.js"></script>
+      <script src="scripts/sidebar.js"></script>
+      <script src="scripts/barChart.js"></script>
+      <script src="scripts/bubble.js"></script>
+    </body>
+</html>
