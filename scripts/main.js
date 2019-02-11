@@ -1,5 +1,6 @@
 var rankChats = {};
 var ownerData;
+var rankSent;
 
 function main() {
   getOwner();
@@ -11,7 +12,8 @@ function main() {
   createReceivedDates(received);
 
   // Create Bubbles
-  createBubbles(rankBy(rankChats, 'message'));
+  rankReceived = rankBy(rankChats, 'message');
+  createBubbles('.bubbles', rankReceived);
 }
 
 function startup() {
@@ -20,8 +22,11 @@ function startup() {
   createReceivedDates();
 
   // Bubble Chart
-  createBubbles();
+  createBubbles('.bubbles');
 
+
+  // Message messageTypes
+  messageTypes();
 }
 function rankManipulate(df) {
   // Create datafrane to be used for ranking data
@@ -45,7 +50,7 @@ function rankManipulate(df) {
 
       if (msg.media == 'message') {
         rankChats[name]['characters'] += msg.length;
-        rankChats[name]['words'] += msg.num_words;
+        rankChats[name]['words'] += msg.numWords;
       }
 
     }

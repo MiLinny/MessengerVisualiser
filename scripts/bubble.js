@@ -1,8 +1,8 @@
 
 
-function createBubbles(data) {
+function createBubbles(tag,data) {
 
-  d3.select('g').remove();
+  d3.select(tag).select('g').remove();
 
   if (data == undefined) {
     data = [["Mum", 49806], ["Dad", 48996], ["Grandparents", 14480], ["Uncle Bob", 8010], ["Aunt Cecile", 6438], ["DaughterA", 13150], ["DaughterB", 3892], ["Son2", 21732], ["Son3", 44], ["Big Fish", 92132],
@@ -23,7 +23,7 @@ function createBubbles(data) {
 
 
   var colors = ["#8dd3c7","#ffffb3","#bebada","#fb8072","#80b1d3","#fdb462","#b3de69","#fccde5","#bc80bd","#ccebc5","#ffed6f"];
-  var svg = d3.select('.bubbles')
+  var svg = d3.select(tag)
       .style('height', h)
       .style('width', w)
       .style('min-width', w)
@@ -77,64 +77,3 @@ function createBubbles(data) {
     simulation.nodes(data)
       .on('tick', ticked);
 }
-
-
-// function Bubbles() {
-//
-//
-//   var data = rankBy(rankChats, 'message');
-//   var radScale = d3.scaleLinear()
-//       .domain([0, msgRank[0][1]*1.1] )
-//       .range([0, 30]);
-//
-//   var svg = d3.select('.bubbles');
-//
-//   var chart = bubbleChart()
-//       .width(500)
-//       .height(500);
-//
-//   svg.data(data)
-//     .call(chart);
-//
-//   var simulation = d3.forceSimulation(data)
-//       .force("charge", d3.forceManyBody().strength([-50]))
-//       .force("x", d3.forceX())
-//       .force("y", d3.forceY())
-//       .on("tick", ticked);
-//
-// }
-//
-//
-//
-// var bubbleChart = function() {
-//   var h = 500; var w = 500;
-//
-//   var svg = d3.select('.bubbles')
-//       .style('height', h)
-//       .style('width', w)
-//       .attr('font-size', 10)
-//       .attr('font-family', 'Montserrat')
-//       .attr('text-anchor', 'middle');
-//
-//   function chart(selection) {
-//
-//   }
-//
-//   chart.width = function(value) {
-//     if (value == undefined) {
-//       return width;
-//     }
-//     else {
-//       return chart;
-//     }
-//   }
-//   chart.height = function(value) {
-//     if (value == undefined) {
-//       return height;
-//     }
-//     else {
-//       return chart;
-//     }
-//   }
-//   return chart;
-// };

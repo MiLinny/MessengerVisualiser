@@ -145,31 +145,71 @@ function createReceivedDates(received) {
                      .attr('fill', 'white')
 }
 
+function messageTypes(p) {
+  var svg = d3.select('.bar3');
 
-function createBar() {
-  var w = 500;
-  var h = 500;
-  var padding = 3;
-  var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
-                  11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+  svg.selectAll('rect').remove();
 
-  var svg = d3.select('.chart2')
-      .append('svg')
-      .attr('width', w)
-      .attr('height', h)
-      .attr('class', 'dates');
+  var names = ['Messages', 'Stickers', 'Gifs', 'Photos'];
+  var data;
+
+  if (p == undefined) {
+    p = {"words":1758668,"characters":9138742,"message":336624,"sticker":1183,"gif":0,"photos":6624,"totalSent":344431};
+    data = [336624, 1183,  0, 6624];
+  }
+  else {
+    data = [p.message,  p.sticker, p.gif, p.photos ];
+  }
+
+  var w = 300; var h = 386; var padding = 10;
+  var xscale = d3.scaleLinear()
+      .domain([0 , Math.max.apply(Math, data) *0.9])
+      .range([1, w *.8]);
+
 
   var chart = svg.selectAll('rect')
-       .data(dataset)
-       .enter()
-       .append("rect")
-       .attr("x", function(d,i) {
-         return padding + i* w/dataset.length;
-       })
-       .attr("y", function(d) {
-         return 0;
-       })
-       .attr("width", w/dataset.length - padding)
-       .attr("height", d => 5*d)
-       .attr("fill", "teal");
+      .data(data)
+      .enter()
+      .append('rect')
+      .attr('x', 70)
+      .attr('y', function(d,i) {
+        return 28 + i*(w/data.length + padding);
+      })
+      .attr('width', d => 5* xscale(d))
+      .attr('height', h/data.length - 2*padding)
+      .attr('fill', '#6D7993')
+      .on('mouseover', function(d) {
+        tooltip.transition()
+          .style('opacity', 1)
+        tooltip.html(d)
+          .style('left', (d3.event.pageX)+'px')
+          .style('top', (d3.event.pageY) + 'px');
+        d3.select(this).style('opacity', 0.5);
+      })
+      .on('mouseout', function(d) {
+        tooltip.transition()
+          .style('opacity', 0)
+        d3.select(this).style('opacity', 1);
+      });
+
+    // Add Vertical Axis label
+    var vText = svg.selectAll('text')
+                   .data(data)
+                   .enter()
+                   .append('text')
+                   .text(function(d, i) {
+                     return names[i];
+                   })
+                   .attr('x', 5)
+                   .attr('y', function(d,i) {
+                     return 40 + i*(w/data.length + padding) + 28;
+                   })
+                   .attr('font-family', 'Montserrat')
+                   .attr('font-size', '11px')
+                   .attr('fill', 'white');
+
+    var name = svg.select('owner-name')
+                  .data([0])
+                  .append('text')
+                  .text(owner);
 }
