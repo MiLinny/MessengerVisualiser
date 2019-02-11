@@ -14,7 +14,7 @@ html {
   grid-template-columns: 9fr auto;
   grid-template-rows: 50px auto;
   grid-template-areas: "header header"
-                       "content side-bar";
+                       "content content";
 }
 
 header {
@@ -53,8 +53,11 @@ header {
   background: white;
   grid-area: side-bar;
   width: 200px;
-  /* position: fixed; */
+  height: 1000px;
+  position: fixed;
   display: none;
+  right: 0;
+  top: 50px;
 }
 
 .buttons {
@@ -65,6 +68,11 @@ header {
   text-align: center;
   padding: 5px;
   text-decoration: none;
+}
+
+.buttons:hover {
+  background: #6D7993;
+  color: white;
 }
 
 #actual-sidebar {

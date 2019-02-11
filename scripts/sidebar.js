@@ -6,13 +6,13 @@ function openSidebar() {
     document.getElementById('side-bar').style.display = "block";
     document.getElementById('side-bar-button').style.background = "white";
     document.getElementById('side-bar-button').style.color = "#6D7993";
-    document.getElementById('actual-sidebar').style.display = "block";
+    // document.getElementById('actual-sidebar').style.display = "block";
   }
   else {
     document.getElementById('side-bar').style.display = "none";
     document.getElementById('side-bar-button').style.background = "#6D7993";
     document.getElementById('side-bar-button').style.color = "white";
-    document.getElementById('actual-sidebar').style.display = "none";
+    // document.getElementById('actual-sidebar').style.display = "none";
   }
   count += 1;
   console.log(count);
