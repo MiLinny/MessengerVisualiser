@@ -137,6 +137,7 @@ function rankSent(df) {
 }
 
 function convertOwnerData(data) {
+  // Converts Owner Data to be used by about you
   var tmp = {
     'numWords' : data.words / data.message,
     'numChar' : data.characters / data.words,

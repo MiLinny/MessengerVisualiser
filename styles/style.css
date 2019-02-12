@@ -23,14 +23,6 @@ html {
   }
 }
 
-header {
-  background: #6D7993;
-  grid-area: header;
-  position: fixed;
-  height: 50px;
-  width: 100%;
-}
-
 
 /* Sidebar Stuff */
 
@@ -88,6 +80,13 @@ header {
   display: none;
 }
 
+header {
+  background: #6D7993;
+  grid-area: header;
+  position: fixed;
+  height: 50px;
+  width: 100%;
+}
 
 h1 {
   padding-left: 15px;
@@ -129,6 +128,7 @@ h5 {
   margin-left: 25px;
 
 }
+
 /* Body Styles */
 
 p {
@@ -190,8 +190,6 @@ ul li {
 .you {
   display: inline;
   position: relative;
-  /* right: 0;
-  margin-right: 50px; */
 }
 
 .bar-chart {
@@ -223,8 +221,6 @@ ul li {
   display: block;
   margin: 50px 0;
   margin-left: 50px;
-  /* width: 500px;
-  height: 300px; */
 }
 
 .bubbles2 {
@@ -232,8 +228,6 @@ ul li {
   display: block;
   margin: 50px 0;
   margin-left: 50px;
-  /* width: 500px;
-  height: 300px; */
 }
 
 .interface {

@@ -5,12 +5,13 @@ var started = 0;
 var finished = 0;
 
 function getOwner() {
+  // Determines the owner's name frmo JSON file.
   owner = Object.keys(owner).reduce(function(a,b) { return owner[b] > owner[a] ? b : a; });
 }
 
 
 function parseData(upload) {
-
+  // Reads data
   for (let file of upload.files) {
     if (file.webkitRelativePath.endsWith("message.json")) {
       readJSON(file);
@@ -32,6 +33,8 @@ function readJSON(file) {
         'title' : data.title
       };
 
+      // Determine the owner by counting participants in data
+      // Key with highest value
       if (data.is_still_participant) {
         data.participants.forEach(function(p) {
           if (owner[p.name] == undefined) {
