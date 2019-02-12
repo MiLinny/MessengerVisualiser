@@ -13,8 +13,14 @@ html {
   width: auto;
   grid-template-columns: 9fr auto;
   grid-template-rows: 50px auto;
-  grid-template-areas: "header header"
-                       "content content";
+  grid-template-areas: "header"
+                       "content";
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 1500px;
+  }
 }
 
 header {
