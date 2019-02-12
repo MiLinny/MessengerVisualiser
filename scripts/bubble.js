@@ -11,8 +11,8 @@ function createBubbles(tag,interface,data) {
 
   var radScale = d3.scaleSqrt()
       .domain([1, data[0][1]*1.1] )
-      .range([5, 80]);
-      var h = 700; var w = 700;
+      .range([5, 50]);
+      var h = 500; var w = 500;
 
   var tooltip = d3.select(interface)
       .style('background', '#9099A2')
@@ -90,8 +90,8 @@ function sentBubbles(tag,interface,data) {
 
   var radScale = d3.scaleSqrt()
       .domain([1, data[0][1]*1.1] )
-      .range([5, 80]);
-      var h = 700; var w = 700;
+      .range([5, 45]);
+      var h = 500; var w = 500;
 
   var tooltip = d3.select(interface)
       .style('background', '#9099A2')
