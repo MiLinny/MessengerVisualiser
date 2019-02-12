@@ -140,6 +140,15 @@ ol {
   margin-left: 100px;
 }
 
+ul {
+  display: block;
+  margin: 50px;
+}
+
+ul li {
+  margin-right: 50px;
+}
+
 .intro p {
   margin: 20px 50px;
 }
@@ -157,6 +166,10 @@ ol {
   flex-direction: column;
 }
 
+#userinfo {
+  width: 100%;
+}
+
 .chart2 {
   background: #96858F;
   display: flex;
@@ -165,6 +178,14 @@ ol {
 .chart1 {
   background: #D5D5D5;
   display: flex;
+}
+
+
+.you {
+  display: inline;
+  position: relative;
+  /* right: 0;
+  margin-right: 50px; */
 }
 
 .bar-chart {
@@ -191,18 +212,34 @@ ol {
   margin-right: 72.25px;
 }
 
- .bubbles {
-   background: #D5D5D5;
-   display: block;
-   margin: 50px 0;
-   margin-left: 50px;
-   /* width: 500px;
-   height: 300px; */
- }
+.bubbles {
+  background: #D5D5D5;
+  display: block;
+  margin: 50px 0;
+  margin-left: 50px;
+  /* width: 500px;
+  height: 300px; */
+}
 
- .interface {
-   width: 350px;
-   margin: 100px auto;
-   display: block;
-   opacity: 0;
- }
+.bubbles2 {
+  background: #D5D5D5;
+  display: block;
+  margin: 50px 0;
+  margin-left: 50px;
+  /* width: 500px;
+  height: 300px; */
+}
+
+.interface {
+  width: 350px;
+  margin: 100px auto;
+  display: block;
+  opacity: 0;
+}
+
+.interface2 {
+  width: 350px;
+  margin: 100px auto;
+  display: block;
+  opacity: 0;
+}

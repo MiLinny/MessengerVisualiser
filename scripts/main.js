@@ -1,6 +1,12 @@
 var rankChats = {};
 var ownerData;
-var rankSent;
+var sentData = {};
+var numMessagesByDate = {};
+var numMessagesCount = 0;
+var ownerInfo;
+
+var earliest;
+var latest;
 
 function main() {
   getOwner();
@@ -11,9 +17,20 @@ function main() {
   createSentDates(sent);
   createReceivedDates(received);
 
-  // Create Bubbles
+  // Create received messages bubble
   rankReceived = rankBy(rankChats, 'message');
-  createBubbles('.bubbles', rankReceived);
+  createBubbles('.bubbles', '.interface',rankReceived);
+
+  // Create Sent messages bubble
+  rankSent = rankSent(sentData);
+  createBubbles('.bubbles2','.interface2', rankSent);
+
+  // Create MEssage Type bar chart
+  messageTypes(ownerData);
+
+  // Owner Information
+  ownerInfo = convertOwnerData(ownerData);
+  updateAbout();
 }
 
 function startup() {
@@ -22,15 +39,49 @@ function startup() {
   createReceivedDates();
 
   // Bubble Chart
-  createBubbles('.bubbles');
+  createBubbles('.bubbles', '.interface');
+  createBubbles('.bubbles2', '.interface2')
 
-
-  // Message messageTypes
+  // Message sentDataypes
   messageTypes();
 }
+
+// Data frame manipulations and ranking functions
+
 function rankManipulate(df) {
   // Create datafrane to be used for ranking data
   df.filter(function(msg) {
+    if (msg.sender == owner) {
+
+      var chat = msg.title;
+      if (sentData[chat] == undefined) {
+        sentData[chat] = 0;
+      }
+      sentData[chat] += 1;
+    }
+
+
+    var tmpDate = msg.date;
+    var dateKey = new Date(tmpDate.getFullYear(), tmpDate.getMonth(), tmpDate.getDay());
+
+    if (earliest == undefined) {
+      earliest = dateKey;
+      latest = dateKey;
+    }
+
+    if (earliest > dateKey) {
+      earliest = dateKey;
+    }
+    if (latest < dateKey) {
+      latest = dateKey;
+    }
+
+    if (numMessagesByDate[dateKey] == undefined) {
+      numMessagesByDate[dateKey] = 0;
+      numMessagesCount += 1;
+    }
+    numMessagesByDate[dateKey] += 1;
+
     if (msg.threadType == 'Regular') {
       var name = msg.sender;
       if (rankChats[name] == undefined) {
@@ -45,6 +96,7 @@ function rankManipulate(df) {
         };
       }
 
+
       rankChats[name]['totalSent'] += 1;
       rankChats[name][msg.media] += 1;
 
@@ -54,11 +106,14 @@ function rankManipulate(df) {
       }
 
     }
+
+
   });
 }
 
 // Media: photos, message, etc
 function rankBy(df, media) {
+  // Rank received data
   ownerData = df[owner];
   delete df[owner];
   var ranked = Object.keys(df).map(function(key) {
@@ -68,4 +123,32 @@ function rankBy(df, media) {
     return b[1] - a[1];
   });
   return ranked;
+}
+
+function rankSent(df) {
+  // Rank sentData
+  var sent = Object.keys(df).map(function(key) {
+    return [key, df[key]];
+  })
+  sent.sort((function(a,b) {
+    return b[1] - a[1];
+  }))
+  return sent;
+}
+
+function convertOwnerData(data) {
+  var tmp = {
+    'numWords' : data.words / data.message,
+    'numChar' : data.characters / data.words,
+    'perDate' : avgMsgPerDay(data)
+  }
+  return tmp;
+}
+
+function avgMsgPerDay(data) {
+  var tot = 0;
+  for (let key of Object.keys(data)) {
+    tot += data[key];
+  }
+  return tot/numMessagesCount;
 }

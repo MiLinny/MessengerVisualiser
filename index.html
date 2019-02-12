@@ -27,14 +27,46 @@
 
             <input id="inputfile" type="file" name="file" value="file" webkitdirectory="true" onchange="parseData(this)">
           </div>
-          <div class="chart2" id="bubbleChart">
+          <div class="chart1" id="aboutYou">
+            <!-- <div>
+              <h4>Types of Media</h4>
+              <svg class="bar-chart"></svg>
+            </div> -->
+            <h3>About You</h3>
+            <div id="userinfo">
+              <p>Here is some basic information about you and your messaging habits.</p>
+              <ul>
+                <li>Name:<div class='you' id="ownername"> Simba</div></li>
+                <li>Average Number of Words per Message: <div class='you' id="avgWords">10</div></li>
+                <li>Average Number of Characters per Message: <div class='you' id="avgChar">1</div></li>
+              </ul>
+            </div>
+          </div>
+          <div class="chart2" id="bubbleChart1">
+            <div>
+              <h5>Which chats do you message the most?</h5>
+              <div class="interface2">Interface</div>
+            </div>
+            <svg class="bubbles2"></svg>
+          </div>
+          <div class="chart1" id="barChart2">
+            <h3>What type of media do you send?</h3>
+            <p>What kind of messages do you send?<br>
+              Hover over for more details!</br>
+            </p>
+            <div>
+              <h4>Types of Media</h4>
+              <svg class="bar-chart bar3"></svg>
+            </div>
+          </div>
+          <div class="chart2" id="bubbleChart2">
             <svg class="bubbles"></svg>
             <div>
               <h5>Who sends you the most messages?</h5>
               <div class="interface">Interface</div>
             </div>
           </div>
-          <div class="chart1" id="barChart">
+          <div class="chart1" id="barChart3">
             <h3>What day do you send and receive the most messages?</h3>
             <div>
               <h4 style="margin-left: 90px;">Messages Received</h4>
@@ -48,28 +80,15 @@
               <svg class="bar-chart bar2"></svg>
             </div>
           </div>
-          <div class="chart2" id="bubbleChart">
-            <svg class="bubbles2"></svg>
-            <div>
-              <h5>Who sends you the most messages?</h5>
-              <div class="interface">Interface</div>
-            </div>
-          </div>
-          <div class="chart1" id="barChart">
-            <h3>What type of media do you send?</h3>
-            <p>What kind of messages do you send?<br>
-              Hover over for more details!</br>
-            </p>
-            <div>
-              <h4>Types of Media</h4>
-              <svg class="bar-chart bar3"></svg>
-            </div>
-          </div>
           <div id="side-bar">
             <h2>Charts</h2>
-            <a href="#bubbleChart" class="buttons">Bubble Chart</a>
-            <a href="#barChart" class="buttons">Bar Chart</a>
+            <a href="#aboutYou" class="buttons">About You</a>
+            <a href="#bubbleChart1" class="buttons">Bubble Chart</a>
+            <a href="#barChart2" class="buttons">Bar Chart</a>
+            <a href="#bubbleChart2" class="buttons">Bubble Chart</a>
+            <a href="#barChart3" class="buttons">Bar Chart</a>
           </div>
+          <div>By Michael Lin</div>
         </div>
       </div>
       <script src="scripts/d3.js"></script>  <!-- Version 5 -->
@@ -78,5 +97,6 @@
       <script src="scripts/sidebar.js"></script>
       <script src="scripts/barChart.js"></script>
       <script src="scripts/bubble.js"></script>
+      <script src="scripts/about.js"></script>
     </body>
 </html>
