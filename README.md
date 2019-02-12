@@ -5,4 +5,4 @@ A website that can visualise the following regarding your Facebook Messenger his
  - Total number of messages sent by each contact
  
 Try with the following link:\
-https://milinny.github.io/MessengerVisualiser/
+https://milinny.gitlab.io/MessengerVisualiser
