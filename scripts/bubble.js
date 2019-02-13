@@ -45,10 +45,10 @@ function createBubbles(tag,interface,data) {
       })
       .attr('cx', 300)
       .attr('cy', 300)
-      .on('mouseover', function(d) {
+      .on('mouseover', function(d,i) {
         tooltip.transition()
           .style('opacity', 1)
-        tooltip.html('Name: '+d[0]+'<br>Number of Messages: '+d[1]);
+        tooltip.html('Name: '+d[0]+'<br>Rank: ' + (i+1) +'<br>Number of Messages: '+d[1] );
         d3.select(this).style('opacity', 0.5);
       })
       .on('mouseout', function(d) {
