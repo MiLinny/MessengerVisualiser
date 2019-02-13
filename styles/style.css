@@ -4,6 +4,20 @@
   box-sizing: border-box;
 }
 
+html,body {
+  -webkit-text-size-adjust:none;
+  /* overflow-x: hidden; */
+ }
+
+/* html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+} */
+
 html {
   font-family: 'Montserrat', sans-serif;
 }
@@ -86,6 +100,7 @@ header {
   position: fixed;
   height: 50px;
   width: 100%;
+  z-index: 5;
 }
 
 h1 {
@@ -158,7 +173,6 @@ ul li {
 }
 
 .text {
-  max-width: auto;
   width: 100%;
   margin: 15px 50px;
 }
@@ -234,20 +248,37 @@ ul li {
 .bubbles2 {
   background: #D5D5D5;
   display: block;
-  margin: 50px 0;
-  margin-left: 50px;
+  margin: 50px;
+  margin-left: 100px;
 }
 
-.interface {
+.ace {
   width: 350px;
   margin: 100px auto;
+  font-size: 20px;
   display: block;
   opacity: 0;
 }
 
 .interface2 {
   width: 350px;
-  margin: 100px auto;
+  margin: 50px;
   display: block;
   opacity: 0;
+}
+
+.interface {
+  width: 350px;
+  margin: 50px;
+  display: block;
+  opacity: 0;
+}
+
+
+.textbox {
+  margin-top: 50px;
+}
+
+.text2 {
+  margin: 50px;
 }

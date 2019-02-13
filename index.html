@@ -45,14 +45,16 @@
           <div class="chart2" id="bubbleChart1">
             <div>
               <h5>Which chats do you message the most?</h5>
-              <p class="text">
-                Find out who you message the most and how many messages you send to them!<br>
-                For details about name, and number of messages, hover over the bubbles.</p>
-              <p class="text">Method:</p>
-              <ul class="text">
-                <li>Messages are counted based on the sender's name and does not distinguish between the type of chat i.e. one-on-one or group messages.</li>
-                <li>Note: If you know two people with the same name, they will be considered one person.</li>
-              </ul>
+              <div class="textbox">
+                <p class="text">
+                  Find out who you message the most and how many messages you send to them!
+                  For details about name, and number of messages, hover over the bubbles.</p>
+                <p class="text">Method:</p>
+                <ul class="text">
+                  <li>Messages are counted based on the title of the chat name rather than by person. So if a person messages you in chat1 and chat2, the messages count towards two different chat names.</li>
+                  <li>Note: If you have two chats with the same name, they will be considered one chat.</li>
+                </ul>
+              </div>
               <div class="interface2">Interface</div>
             </div>
             <svg class="bubbles2"></svg>
@@ -77,6 +79,15 @@
             <svg class="bubbles"></svg>
             <div>
               <h5>Who sends you the most messages?</h5>
+              <div class="textbox">
+                <div class="text2">
+                Find out who sends you the most messsages and how messages they have sent to you in total!<br>
+                For details about the person, and number of messages, hover over the bubbles.<br>
+                Method:<br>
+                - Messages are counted based on the sender's name, and does not distinguish between the type of chat i.e. one-on-one or group messages.<br>
+                Note: If you know two people with the same name, they will be considered one person.
+                </div>
+              </div>
               <div class="interface">Interface</div>
             </div>
           </div>
@@ -87,7 +98,9 @@
               <svg class="bar-chart bar1"></svg>
             </div>
             <p>Which day are you most popular?<br>
-              Hover over for more details!
+              Do you send more on some days than others?</br></br>
+              Find out the frequency distribution of your sent/received messages seperated by days.<br>
+              To find out the number of total messages sent/received at a given day, hover over it!
             </p>
             <div>
               <h4>Messages Sent</h4>
