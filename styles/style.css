@@ -142,6 +142,8 @@ p {
   background: #9099A2;
 }
 
+
+
 ol {
   margin-left: 100px;
 }
@@ -153,6 +155,12 @@ ul {
 
 ul li {
   margin-right: 50px;
+}
+
+.text {
+  max-width: auto;
+  width: 100%;
+  margin: 15px 50px;
 }
 
 .intro p {

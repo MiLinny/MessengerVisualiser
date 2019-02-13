@@ -6,8 +6,7 @@ function createBubbles(tag,interface,data) {
 
   // Default Data
   if (data == undefined) {
-    data = [["Mum", 49806], ["Dad", 48996], ["Grandparents", 14480], ["Uncle Bob", 8010], ["Aunt Cecile", 6438], ["DaughterA", 13150], ["DaughterB", 3892], ["Son2", 21732], ["Son3", 44], ["Big Fish", 92132],
-            ["AcquaintanceA", 1]];
+    data =  [["Nala",46919],["Pumbaa",45309],["Timon",43348],["Rafiki",36084],["Mufasa",22030],["Scar",18850],["Sarabi",17179],["Zazu",10253],["Sarafina",9649], ["Li0n",8009],["L10n",7164],["L10n",4843],["L10ness",4099],["Lioness",4055],["Iioness",3486],["L1oness123",3212], ["Shenzi",2811],["Banzai",2784],["Ed",2280],["K1ng",2229],["Royal Lions Near You",1606],["Pride Rock",1384],["Mane Maintainence",1248], ["Munga",1113],["Cute Cats",1111],["PrideBook",1056],["Crocodile",971],["Gorillas",916],["Hyenas",767],["Ostrich",611], ["Casowary",564],["Zebras",546],["Vegan Master41",521],["Lions Near You",403],["Vegetarian Pride3",323],["Paleo King792",313],["Uru",293],["Kopa",280],["Starehe",220],["Giraffes",204],["Kangaroos",194],["Wild Hogs",191],["Birds",174],["Cubs",157], ["Reirei",102],["Aaardwolves",94],["Makini",89],["Ono",87],["Kion",75],["Max",69],["Impala",69], ["Jasiri",12],["Mzingo",10],["Paws",10],["Wildlife life",9],["Madagascar",8],["Prides Near You",7],["ChatBox",6],["Anonymous",5], ["Anonymous",5],["Instant Chess",5],["PlayGo",5],["Words with Friends",4],["PokerPlay",4],["Chat Roulette",3],["UberEats",2],["Congo Lions",2], ["African Lions",2],["Messenger",2],["Predators",2],["Real_Mufasa",1],["RealNala",1],["RealTimon",1],["theRealScar",1],["RealSimba",1],["TheRealSimba",1], ["S1mba",1],["RealLions",1],["RealSarafine",1],["RealMufasa",1],["Big Fish",1],["Fb Chess",1],["Shiki",1],["Babboon",1], ["Elyphant",1],["Gopher",1],["Elephant123",1],["Elephant",1],["E1ephant",1],["Elephunt",1],["Elephont",1]];
   }
 
   var radScale = d3.scaleSqrt()
