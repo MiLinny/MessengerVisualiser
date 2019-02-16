@@ -1,12 +1,14 @@
-var rankChats = {};
-var ownerData;
-var sentData = {};
+
+
+// Predefined Variables
+var rankChats = {};           // Chats ranked by receiver
+var ownerData;                // Containers frequency of msg, stickers, etc
+var sentData = {};            // Frequency of msg sent by owner to each chat
 var numMessagesByDate = {};
 var numMessagesCount = 0;
 var ownerInfo;
-
-var earliest;
-var latest;
+var earliest;                 // Date of earliest message
+var latest;                   // Date of latest message
 
 function main() {
   getOwner();
