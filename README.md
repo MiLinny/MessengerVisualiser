@@ -7,5 +7,8 @@ A website that can visualise the following regarding your Facebook Messenger his
  - Frequency of messages by day
  - Total number of messages received per person
  
-Try with the following link:\
+Try either of the following link:\
+https://milinny.github.io/MessengerVisualiser
+
 https://milinny.gitlab.io/MessengerVisualiser
+
