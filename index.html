@@ -35,12 +35,14 @@
           <div class="chart1" id="aboutYou">
             <h3>About You</h3>
             <div id="userinfo">
-              <p class="p-margin">Here is some basic information about you and your messaging habits.</p>
-              <ul>
-                <li>Name:<div class='you' id="ownername"> Simba</div></li>
-                <li>Average Number of Words per Message: <div class='you' id="avgWords">5.22</div></li>
-                <li>Average Number of Characters per Word: <div class='you' id="avgChar">5.20</div></li>
-              </ul>
+              <p class="centering">Here is some basic information about you and your messaging habits.</p>
+              <div class="centering">
+                <ul>
+                  <li>Name:<div class='you' id="ownername"> Simba</div></li>
+                  <li>Average Number of Words per Message: <div class='you' id="avgWords">5.22</div></li>
+                  <li>Average Number of Characters per Word: <div class='you' id="avgChar">5.20</div></li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="chart2" id="bubbleChart1">
@@ -62,18 +64,21 @@
           </div>
           <div class="chart1" id="barChart2">
             <h3>What type of media do you send?</h3>
-            <p class="p-margin">What kind of messages do you send?<br>
-               The frequency of the following types of messages are sorted into the following types:<br>
-               - Messages (Text-based messages)<br>
-               - Stickers<br>
-               - Gifs<br>
-               - Photos<br>
-               Hover over each type to find out how many messages you send of that type.
-            </p>
-
-            <div>
-              <h4>Types of Media</h4>
-              <svg class="bar-chart bar3"></svg>
+            <div class="bar-container">
+              <div class="c1-container">
+                <p class="p-margin">What kind of messages do you send?<br>
+                   The frequency of the following types of messages are sorted into the following types:<br>
+                   - Messages (Text-based messages)<br>
+                   - Stickers<br>
+                   - Gifs<br>
+                   - Photos<br>
+                   Hover over each type to find out how many messages you send of that type.
+                </p>
+                <div>
+                  <h4>Types of Media</h4>
+                  <svg class="bar-chart bar3"></svg>
+                </div>
+              </div>
             </div>
           </div>
           <div class="chart2" id="bubbleChart2">
@@ -94,18 +99,22 @@
           </div>
           <div class="chart1" id="barChart3">
             <h3>What day do you send and receive the most messages?</h3>
-            <div>
-              <h4 style="margin-left: 90px;">Messages Received</h4>
-              <svg class="bar-chart bar1"></svg>
-            </div>
-            <p class="p-margin">Which day are you most popular?<br>
-              Do you send more on some days than others?</br></br>
-              Find out the frequency distribution of your sent/received messages seperated by days.<br>
-              To find out the number of total messages sent/received at a given day, hover over it!
-            </p>
-            <div>
-              <h4>Messages Sent</h4>
-              <svg class="bar-chart bar2"></svg>
+            <div class="bar-container">
+              <div class="c1-container">
+                <div>
+                  <h4 style="margin-left: 90px;">Messages Received</h4>
+                  <svg class="bar-chart bar1"></svg>
+                </div>
+                <p class="p-margin">Which day are you most popular?<br>
+                  Do you send more on some days than others?</br></br>
+                  Find out the frequency distribution of your sent/received messages seperated by days.<br>
+                  To find out the number of total messages sent/received at a given day, hover over it!
+                </p>
+                <div>
+                  <h4>Messages Sent</h4>
+                  <svg class="bar-chart bar2"></svg>
+                </div>
+              </div>
             </div>
           </div>
           <div class="tabledata" >
