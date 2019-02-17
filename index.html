@@ -15,8 +15,8 @@
         </header>
         <div class="content">
           <div class="intro">
-            <h1>Introduction: Visualise your Messenger History</h1>
-            <p>
+            <h1 style="font-size: 30px;">Introduction: Visualise your Messenger History</h1>
+            <p class="p-margin">
               This website was made to visualise random findings from your Facebook Messenger history.
               To see these findings, follow the instructions below:
             </p>
@@ -28,11 +28,14 @@
             </ol>
 
             <input id="inputfile" type="file" name="file" value="file" webkitdirectory="true" onchange="parseData(this)">
+            <p class="p-margin">
+              Note. Your data is run through the browser so your data does not go anywhere. If in doubt, you may cut the internet connection once the page loads.
+            </p>
           </div>
           <div class="chart1" id="aboutYou">
             <h3>About You</h3>
             <div id="userinfo">
-              <p>Here is some basic information about you and your messaging habits.</p>
+              <p class="p-margin">Here is some basic information about you and your messaging habits.</p>
               <ul>
                 <li>Name:<div class='you' id="ownername"> Simba</div></li>
                 <li>Average Number of Words per Message: <div class='you' id="avgWords">5.22</div></li>
@@ -59,7 +62,7 @@
           </div>
           <div class="chart1" id="barChart2">
             <h3>What type of media do you send?</h3>
-            <p>What kind of messages do you send?<br>
+            <p class="p-margin">What kind of messages do you send?<br>
                The frequency of the following types of messages are sorted into the following types:<br>
                - Messages (Text-based messages)<br>
                - Stickers<br>
@@ -95,7 +98,7 @@
               <h4 style="margin-left: 90px;">Messages Received</h4>
               <svg class="bar-chart bar1"></svg>
             </div>
-            <p>Which day are you most popular?<br>
+            <p class="p-margin">Which day are you most popular?<br>
               Do you send more on some days than others?</br></br>
               Find out the frequency distribution of your sent/received messages seperated by days.<br>
               To find out the number of total messages sent/received at a given day, hover over it!
@@ -105,6 +108,16 @@
               <svg class="bar-chart bar2"></svg>
             </div>
           </div>
+          <div class="tabledata" >
+            <h5>Further Information</h5>
+            <p style="margin: 10px 50px;">
+              The below table contains some details regarding your one-on-one interactions with your friends.
+            </p>
+            <div id="table-container">
+              <table>
+<tr><th>Name</th><th>Rank by Number Received</th><th>Avg Word per Message</th><th>Avg Number of Characters per Message</th><th>Total Sent</th><th>Total Received</th><th>Messages Received</th><th>Stickers Received</th><th>Photos Received</th></tr></table>
+            </div>
+          </div>
           <div id="side-bar">
             <h2>Contents</h2>
             <a href="#aboutYou" class="buttons">About You</a>
@@ -112,8 +125,9 @@
             <a href="#barChart2" class="buttons">Media types</a>
             <a href="#bubbleChart2" class="buttons">Who messages you</a>
             <a href="#barChart3" class="buttons">Favourite message day</a>
+            <a href="#table-container" class="buttons">Further Information</a>
           </div>
-          <div>By Michael Lin</div>
+          <div style="background: #6D7993;">By Michael Lin</div>
         </div>
       </div>
       <script src="scripts/d3.js"></script>  <!-- Version 5 -->

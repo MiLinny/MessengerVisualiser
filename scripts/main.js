@@ -10,6 +10,7 @@ var ownerInfo;
 var earliest;                 // Date of earliest message
 var latest;                   // Date of latest message
 
+
 function main() {
   getOwner();
   rankManipulate(df);
@@ -33,6 +34,7 @@ function main() {
   // Owner Information
   ownerInfo = convertOwnerData(ownerData);
   updateAbout();
+  makeTable();
 }
 
 function startup() {
