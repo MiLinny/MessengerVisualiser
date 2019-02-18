@@ -9,7 +9,7 @@ var numMessagesCount = 0;
 var ownerInfo;
 var earliest;                 // Date of earliest message
 var latest;                   // Date of latest message
-
+var sentRankingsDict;
 
 function main() {
   getOwner();
@@ -27,6 +27,7 @@ function main() {
   // Create Sent messages bubble
   rankSent = rankSent(sentData);
   createBubbles('.bubbles2','.interface2', rankSent);
+  sentRankingsDict = getSentRanks(rankSent);
 
   // Create MEssage Type bar chart
   messageTypes(ownerData);
@@ -138,6 +139,14 @@ function rankSent(df) {
     return b[1] - a[1];
   }))
   return sent;
+}
+
+function getSentRanks(df) {
+  var dict = {};
+  for (let i = 0; i < df.length; i++) {
+    dict[df[i][0]] = i + 1;
+  }
+  return dict;
 }
 
 function convertOwnerData(data) {

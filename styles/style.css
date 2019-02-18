@@ -216,8 +216,9 @@ ul li {
 
 
 .you {
-  display: inline;
+  display: inline-block;
   position: relative;
+  float: right;
 }
 
 .bar-chart {
