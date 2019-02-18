@@ -17,7 +17,7 @@ function updateAbout() {
 
 function makeTable() {
   var table = '<table>';
-  var columns = ['Name', 'Sent Rank', 'Total Sent',  'Received Rank', 'Total Received', 'Avg Word per Message', 'Avg Number of Characters per Message',
+  var columns = ['Name', 'Sent Rank', 'Total Sent',  'Received Rank', 'Total Received', 'Avg Word per Message', 'Avg Number of Characters per Word',
                     'Messages Received', 'Stickers Received', 'Photos Received'];
   table += '<tr>';
   for (let col of columns) {
