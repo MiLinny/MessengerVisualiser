@@ -33,7 +33,7 @@ html {
 
 #side-bar-button {
   position: absolute;
-  background: #6D7993;
+  background: #A1C3D1;
   width: 50px;
   height: 50px;
   right: 0px;
@@ -74,7 +74,7 @@ html {
 }
 
 .buttons:hover {
-  background: #6D7993;
+  background: #A1C3D1;
   color: white;
 }
 
@@ -86,7 +86,7 @@ html {
 }
 
 header {
-  background: #6D7993;
+  background: #A1C3D1;
   grid-area: header;
   position: fixed;
   height: 50px;
@@ -111,7 +111,7 @@ h3 {
   margin: 10px auto;
   font-weight: bold;
   font-size: 30px;
-  color: #6D7993;
+  color: white;
   max-width: 1000px;
   width: 100%;
   text-align: center;
@@ -122,6 +122,7 @@ h4 {
   margin-top: 60px;
   margin-bottom: 15px;
   font-weight: bold;
+  color: white;
 }
 
 h5 {
@@ -138,6 +139,7 @@ h5 {
 
 p {
   display: inline-block;
+  color: white;
 }
 
 .p-margin {
@@ -153,18 +155,20 @@ p {
 }
 
 .intro {
-  background: #9099A2;
+  background: #B39BC8;
 }
 
 
 
 ol {
   margin-left: 100px;
+  color: white;s
 }
 
 ul {
   display: block;
   margin: 25px 50px;
+  color: white;
 }
 
 ul li {
@@ -183,11 +187,12 @@ ul li {
 #inputfile {
   display: block;
   margin: 15px auto;
+  color: white;
 }
 
 
 .content {
-  background:#D5D5D5;
+  background:#A1C3D1;
   grid-area: content;
   display: flex;
   flex-direction: column;
@@ -198,16 +203,16 @@ ul li {
 }
 
 .tabledata {
-  background: #6D7993;
+  background: #A1C3D1;
 }
 
 .chart2 {
-  background: #9099A2;
+  background: #B39BC8;
   display: flex;
 }
 
 .chart1 {
-  background: #D5D5D5;
+  background: #F172A1;
 }
 
 .c1-container {
@@ -223,7 +228,7 @@ ul li {
 
 .bar-chart {
   display: block;
-  background: #9099A2;
+  background: #F0EBF4;
   min-width: 300px;
   height: 386px;
   margin-top: 0;
@@ -246,14 +251,14 @@ ul li {
 }
 
 .bubbles {
-  background: #D5D5D5;
+  background: #F0EBF4;
   display: block;
   margin: 50px 0;
   margin-left: 50px;
 }
 
 .bubbles2 {
-  background: #D5D5D5;
+  background: #F0EBF4;
   display: block;
   margin: 50px;
   margin-left: 100px;
@@ -284,6 +289,7 @@ ul li {
 
 .textbox {
   margin-top: 50px;
+  color: white;
 }
 
 .text2 {
@@ -293,7 +299,7 @@ ul li {
 
 #table-container {
   display: block;
-  background: #D5D5D5;
+  background: white;
   margin: 50px;
   overflow: scroll;
   max-height: 300px;
@@ -317,7 +323,7 @@ th, td {
 }
 
 tr:hover {
-  background: white;
+  background: #F0EBF4;
 }
 
 .bar-container {

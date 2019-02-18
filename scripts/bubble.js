@@ -15,7 +15,7 @@ function createBubbles(tag,interface,data) {
       var h = 500; var w = 500;
 
   var tooltip = d3.select(interface)
-      .style('background', '#9099A2')
+      .style('background', '#A1C3D1')
       .style('padding', '5px 15px')
       .style('border', '1px #33 solid')
       .style('border-radius', '5px')

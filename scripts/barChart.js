@@ -49,7 +49,7 @@ function createSentDates(sent) {
       })
       .attr('width', d => xscale(d))
       .attr('height', 50)
-      .attr('fill', '#6D7993')
+      .attr('fill', '#B39BC8')
       .on('mouseover', function(d) {
         tooltip.transition()
           .style('opacity', 1)
@@ -112,7 +112,7 @@ function createReceivedDates(received) {
       })
       .attr('width', d => yscale(d))
       .attr('height', 50)
-      .attr('fill', '#6D7993')
+      .attr('fill', '#B39BC8')
       .on('mouseover', function(d) {
         tooltip.transition()
           .style('opacity', 1)
@@ -142,7 +142,7 @@ function createReceivedDates(received) {
                      .attr('text-anchor', 'end')
                      .attr('font-family', 'Montserrat')
                      .attr('font-size', '11px')
-                     .attr('fill', 'white')
+                     .attr('fill', '#F0EBF4')
 }
 
 function messageTypes(p) {
@@ -177,7 +177,7 @@ function messageTypes(p) {
       })
       .attr('width', d => 5* xscale(d))
       .attr('height', h/data.length - 2*padding)
-      .attr('fill', '#6D7993')
+      .attr('fill', '#B39BC8')
       .on('mouseover', function(d) {
         tooltip.transition()
           .style('opacity', 1)
@@ -206,7 +206,7 @@ function messageTypes(p) {
                    })
                    .attr('font-family', 'Montserrat')
                    .attr('font-size', '11px')
-                   .attr('fill', 'white');
+                   .attr('fill', '#B39BC8');
 
     var name = svg.select('owner-name')
                   .data([0])

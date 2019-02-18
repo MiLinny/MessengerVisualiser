@@ -20,16 +20,16 @@ function openSidebar() {
 
 function menuHoverOff(x) {
   if (count%2 == 0) {
-    x.style.background = "#6D7993";
+    x.style.background = "#A1C3D1";
     x.style.color = "white";
   }
   else {
     x.style.background = "white";
-    x.style.color = "#6D7993";
+    x.style.color = "#A1C3D1";
   }
 }
 
 function menuHoverOn(x) {
   x.style.background = "white";
-  x.style.color = "#6D7993";
+  x.style.color = "#A1C3D1";
 }
