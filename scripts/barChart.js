@@ -30,6 +30,7 @@ function getDates(df) {
 function createSentDates(sent) {
   var svg = d3.select('.bar2');
   svg.selectAll('rect').remove();
+  svg.selectAll('text').remove();
 
   if (sent == undefined) {
     sent = [53607, 54175, 51804, 54995, 55299, 51122, 44973];
@@ -92,6 +93,7 @@ function createSentDates(sent) {
 function createReceivedDates(received) {
   var svg = d3.select('.bar1');
   svg.selectAll('rect').remove();
+  svg.selectAll('text').remove();
 
   if (received == undefined) {
     received = [60305, 64906, 60998, 64443, 64732, 57199, 51669];
@@ -128,21 +130,21 @@ function createReceivedDates(received) {
       });
 
       // Add Text labels
-      var vText = svg.selectAll('text')
-                     .data(received)
-                     .enter()
-                     .append('text')
-                     .text(function(d, i) {
-                       return dates[i];
-                     })
-                     .attr('x', w - 5)
-                     .attr('y', function(d,i) {
-                       return padding + i*(w/received.length + padding) + 28;
-                     })
-                     .attr('text-anchor', 'end')
-                     .attr('font-family', 'Montserrat')
-                     .attr('font-size', '11px')
-                     .attr('fill', '#F0EBF4')
+    var vText = svg.selectAll('text')
+                   .data(received)
+                   .enter()
+                   .append('text')
+                   .text(function(d, i) {
+                     return dates[i];
+                   })
+                   .attr('x', w - 5)
+                   .attr('y', function(d,i) {
+                     return padding + i*(w/received.length + padding) + 28;
+                   })
+                   .attr('text-anchor', 'end')
+                   .attr('font-family', 'Montserrat')
+                   .attr('font-size', '11px')
+                   .attr('fill', 'white')
 }
 
 function messageTypes(p) {
