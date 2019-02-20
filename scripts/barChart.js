@@ -1,9 +1,3 @@
-// Bar chart of messages sent per day
-
-var dates = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-var sent = [0, 0, 0, 0, 0, 0 ,0];
-var received = [0, 0, 0, 0, 0, 0 ,0];
-
 // Hover over effect
 var tooltip = d3.select('.chart1').append('div')
     .style('position', 'absolute')

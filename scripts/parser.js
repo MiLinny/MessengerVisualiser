@@ -1,9 +1,3 @@
-// Store file data
-var df = [];
-var owner = {};
-var started = 0;
-var finished = 0;
-
 function getOwner() {
   // Determines the owner's name frmo JSON file.
   owner = Object.keys(owner).reduce(function(a,b) { return owner[b] > owner[a] ? b : a; });
@@ -48,7 +42,7 @@ function readJSON(file) {
         var length = NaN;
 
         // Situation occurs in groups regarding adding/leaving groups
-        if (msg.content == undefined) {
+        if (msg.content == undefined || msg.content == 'You left the group.' || msg.content.slice(0,35) == 'Say hi to your new Facebook friend,') {
           continue;
         }
 
@@ -63,10 +57,19 @@ function readJSON(file) {
         }
         else {
           media = 'message';
-          numWords = msg.content.split(' ').length;
+          // Add to Text Data (for Markov)
+          var cont = (msg.content.indexOf('.') > 0) ? msg.content.split(' ') : (msg.content + '.').split(' ');
+          numWords = cont.length;
           length = msg.content.length;
+          if (userMessages[msg.sender_name] == undefined) {
+            userMessages[msg.sender_name] = [];
+            userStarts[msg.sender_name] = [];
+          }
+          userStarts[msg.sender_name].push(cont[0]);
+          for (let word of cont) {
+            userMessages[msg.sender_name].push(word);
+          }
         }
-
         msgInfo = {
           'sender' : msg.sender_name,
           'content' : msg.content,

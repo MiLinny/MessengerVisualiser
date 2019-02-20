@@ -68,7 +68,7 @@
                   <li>Avg Num of Photos Sent per/Day: <div class='you' id="phoSenDay"></div></li>
                 </ul>
               </div>
-              <p class="centering">Note. Msgs refers to Texts + Stickers + Photos.</p>
+              <p class="centering" style="margin-bottom: 15px;">Note. Msgs refers to Texts + Stickers + Photos.</p>
             </div>
           </div>
           <div class="chart2" id="bubbleChart1">
@@ -143,6 +143,28 @@
               </div>
             </div>
           </div>
+          <div id="markov-container">
+            <h3>Markov Chains: Generate Messages</h3>
+            <p class="mostScreen">
+              Here we have a simple implementation of markov chains in order to generate random messages based off you, or your friend's message history.
+              As our model does not take grammar into account, some messages may be questionable.
+            </p>
+            <p class="mostScreen">
+              IINSTRUCTIONS<br>
+              To generate a message for a given person, type their name into the textbox below and click the red button.<br>
+              NOTE. The name of the sender must match the names as seen in the table at the bottom (case-sensitive), or how your name is written as seen in the 'About You' section.
+            </p>
+
+            <form onsubmit="runMarkov()">
+              Name <input type="text" id="name-markov"> <button type="submit" value="submit" id="submit-button"></button>
+            </form>
+            <div id="markov-output"></div>
+            <p class="mostScreen">
+              Remark. Depending on the number of messages, and messaging style of a sender, the time taken to output sentences may vary - i.e. senders who write shorter messages will often have faster outputs.
+              Periods (.) were added at the end of every message (for messages without a period) in order to ensure some rule for when a message is complete.
+              So messages involving '...', or the like (so anything with periods) will be considered an end to the sentence in this model.
+            </p>
+          </div>
           <div class="tabledata" >
             <h5>Further Information</h5>
             <p style="margin: 10px 50px;">
@@ -160,6 +182,7 @@
             <a href="#barChart2" class="buttons">Media types</a>
             <a href="#bubbleChart2" class="buttons">Who messages you</a>
             <a href="#barChart3" class="buttons">Favourite message day</a>
+            <a href="#markov-container" class="buttons">Sentence generator</a>
             <a href="#table-container" class="buttons">Further Information</a>
           </div>
           <div style="background: #A1C3D1; color: white;margin-left: 15px;">By Michael Lin</div>
@@ -172,5 +195,6 @@
       <script src="scripts/barChart.js"></script>
       <script src="scripts/bubble.js"></script>
       <script src="scripts/about.js"></script>
+      <script src="scripts/markov.js"></script>
     </body>
 </html>

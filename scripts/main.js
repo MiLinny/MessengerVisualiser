@@ -1,15 +1,43 @@
+// Parser Variables
+// Dataframe, owner's name
+var df = [];
+var owner = {};
+var started = 0;
+var finished = 0;
 
 
 // Predefined Variables
+
+// Received Bubble Chart
 var rankChats = {};           // Chats ranked by receiver
-var ownerData;                // Containers frequency of msg, stickers, etc
+var rankReceived;
+
+// Sent Bubble Chart
 var sentData = {};            // Frequency of msg sent by owner to each chat
-var numMessagesByDate = {};
-var numMessagesCount = 0;
+var sentBubble;
+
+// Message Type Bar Chart
+var ownerData;                // Containers frequency of msg, stickers, etc
+
+// Bar chart of messages sent per day
+var dates = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+var sent = [0, 0, 0, 0, 0, 0 ,0];
+var received = [0, 0, 0, 0, 0, 0 ,0];
+
+// Variables for Table Data
+var sentRankingsDict;
 var ownerInfo;
+
+// Variables for Markov Section (used in Parser)
+var userStarts = {};
+var userMessages = {};
+
+// Extra Variables (For Now)
 var earliest;                 // Date of earliest message
 var latest;                   // Date of latest message
-var sentRankingsDict;
+var numMessagesByDate = {};
+var numMessagesCount = 0;
+
 
 function main() {
   getOwner();
@@ -25,9 +53,9 @@ function main() {
   createBubbles('.bubbles', '.interface',rankReceived);
 
   // Create Sent messages bubble
-  rankSent = rankSent(sentData);
-  createBubbles('.bubbles2','.interface2', rankSent);
-  sentRankingsDict = getSentRanks(rankSent);
+  sentBubble = rankSent(sentData);
+  createBubbles('.bubbles2','.interface2', sentBubble);
+  sentRankingsDict = getSentRanks(sentBubble);
 
   // Create MEssage Type bar chart
   messageTypes(ownerData);
@@ -36,6 +64,10 @@ function main() {
   ownerInfo = convertOwnerData(ownerData);
   updateAbout();
   makeTable();
+
+  // Markov Chain owner
+  document.getElementById('name-markov').value = owner;
+  runMarkov();
 }
 
 function startup() {
