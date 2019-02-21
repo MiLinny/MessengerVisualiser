@@ -1,11 +1,5 @@
 // Hover over effect
-var tooltip = d3.select('.chart1').append('div')
-    .style('position', 'absolute')
-    .style('background', '#9099A2')
-    .style('padding', '5px 15px')
-    .style('border', '1px #33 solid')
-    .style('border-radius', '5px')
-    .style('opacity', '0');
+
 
 
 function getDates(df) {
@@ -29,6 +23,15 @@ function createSentDates(sent) {
   if (sent == undefined) {
     sent = [53607, 54175, 51804, 54995, 55299, 51122, 44973];
   }
+
+  var tooltip = d3.select('.senDate').append('div')
+      .style('position', 'absolute')
+      .style('background', '#9099A2')
+      .style('padding', '5px 15px')
+      .style('border', '1px #33 solid')
+      .style('border-radius', '5px')
+      .style('opacity', '0');
+
   var w = 300; var h = 386; var padding = 10;
   var xscale = d3.scaleLinear()
       .domain([Math.min.apply(Math, sent) * 0.8, Math.max.apply(Math, sent)*1.1])
@@ -92,6 +95,15 @@ function createReceivedDates(received) {
   if (received == undefined) {
     received = [60305, 64906, 60998, 64443, 64732, 57199, 51669];
   }
+
+  var tooltip = d3.select('.recDate').append('div')
+      .style('position', 'absolute')
+      .style('background', '#9099A2')
+      .style('padding', '5px 15px')
+      .style('border', '1px #33 solid')
+      .style('border-radius', '5px')
+      .style('opacity', '0');
+
   var w = 300; var h = 386; var padding = 10;
 
   var yscale = d3.scaleLinear()
@@ -149,6 +161,7 @@ function messageTypes(p) {
   var names = ['Messages', 'Stickers', 'Gifs', 'Photos'];
   var data;
 
+
   if (p == undefined) {
     p = {"words":1758668,"characters":9138742,"message":336624,"sticker":1183,"gif":0,"photos":6624,"totalSent":344431};
     data = [336624, 1183,  0, 6624];
@@ -156,6 +169,14 @@ function messageTypes(p) {
   else {
     data = [p.message,  p.sticker, p.gif, p.photos ];
   }
+
+  var tooltip = d3.select('.msgType').append('div')
+      .style('position', 'absolute')
+      .style('background', '#9099A2')
+      .style('padding', '5px 15px')
+      .style('border', '1px #33 solid')
+      .style('border-radius', '5px')
+      .style('opacity', '0');
 
   var w = 300; var h = 386; var padding = 10;
   var xscale = d3.scaleLinear()

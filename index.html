@@ -10,7 +10,6 @@
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-
           gtag('config', 'UA-134639256-1');
         </script>
         <!-- Google Tag Manager -->
@@ -95,7 +94,7 @@
             </div>
             <svg class="bubbles2"></svg>
           </div>
-          <div class="chart1" id="barChart2">
+          <div class="chart1 msgType" id="barChart2">
             <h3>What type of media do you send?</h3>
             <div class="bar-container">
               <div class="c1-container">
@@ -134,7 +133,7 @@
             <h3>What day do you send and receive the most messages?</h3>
             <div class="bar-container">
               <div class="c1-container">
-                <div>
+                <div class="recDate">
                   <h4 style="margin-left: 90px;">Messages Received</h4>
                   <svg class="bar-chart bar1"></svg>
                 </div>
@@ -143,7 +142,7 @@
                   Find out the frequency distribution of your sent/received messages seperated by days.<br>
                   To find out the number of total messages sent/received at a given day, hover over it!
                 </p>
-                <div>
+                <div class="senDate">
                   <h4>Messages Sent</h4>
                   <svg class="bar-chart bar2"></svg>
                 </div>
