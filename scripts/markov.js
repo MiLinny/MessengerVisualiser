@@ -62,5 +62,5 @@ function runMarkov() {
       out.appendChild(node);
     }
   }
-
+  return true;
 }
