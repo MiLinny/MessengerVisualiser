@@ -410,3 +410,9 @@ form {
 #name-markov:active, #name-markov:focus, #submit-button:active, #submit-button:focus {
   outline: none;
 }
+
+#git {
+  color: black;
+  font-style: none;
+  text-decoration: none;
+}
