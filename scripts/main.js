@@ -39,11 +39,11 @@ var numMessagesByDate = {};
 var numMessagesCount = 0;
 
 // Event Listenrs
-var button = document.getElementById('submit-button');
-button.addEventListener('click', function() {
-  runMarkov();
-  return false;
-});
+// var button = document.getElementById('submit-button');
+// button.addEventListener('click', function() {
+//   runMarkov();
+//   return false;
+// });
 
 function main() {
   getOwner();
