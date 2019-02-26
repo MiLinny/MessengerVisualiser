@@ -230,3 +230,98 @@ function messageTypes(p) {
                   .append('text')
                   .text(owner);
 }
+
+var boot;
+
+function bootstrap(user, n) {
+  let data = [];
+
+  for (var i = 0; i < n; i++) {
+    let len = getUserSentence(user).split(' ').length;
+    if (data[len] == undefined) {
+      data[len] = 1;
+    }
+    else {
+      data[len] += 1;
+    }
+  }
+
+  for (var i = 0; i < data.length; i++) {
+    if (data[i] == undefined) {
+      data[i] = 0;
+    }
+  }
+  return data;
+}
+
+function dist(n, remove) {
+  if (n == undefined) {
+    n = 50;
+  }
+
+  var svg = d3.select('.tmpz')
+
+  if (remove == true) {
+    svg.selectAll('svg').remove();
+  }
+
+  // Bootstrap sample
+  boot = bootstrap(owner, n);
+
+  var low = 0, high = boot.length;
+  var vTexNum = [];
+  while (low <= high) {
+    vTexNum.push(low++);
+  }
+
+  var svg = d3.select('.tmpz').append('svg')
+  var w = 500; var h = 400; var padding = 10; var vTextSpace = 50;
+  svg.attr('height', h)
+     .attr('width', w + vTextSpace)
+     .style('background','#F0EBF4')
+     .style('display','block')
+     .style('margin','50px auto');
+
+
+  var yscale = d3.scaleLinear()
+      .domain([d3.min(boot),d3.max(boot)])
+      .range([5,h - 80]);
+
+      svg.selectAll('rect').remove();
+      svg.selectAll('text').remove();
+
+  var chart = svg.selectAll('rect')
+      .data(boot)
+      .enter()
+      .append('rect')
+      .attr('y', d => h - yscale(d) - 30)
+      .attr('x', function(d,i) {
+        return vTextSpace + i*(w/boot.length) - 10;
+      })
+      .attr('width', w/boot.length)
+      .attr('height', d => yscale(d))
+      .attr('fill', '#B39BC8');
+
+  svg.selectAll('g').remove();
+
+  yscale = d3.scaleLinear()
+      .domain([d3.min(boot),d3.max(boot)])
+      .range([h - 80,5]);
+
+  var yAxis = d3.axisLeft()
+        .scale(yscale);
+  svg.append("g")
+    .attr("transform", "translate(" + (vTextSpace - 10)+"," + 45 +")")
+    .call(yAxis);
+
+  var xscale = d3.scaleLinear()
+      .domain([0,boot.length])
+      .range([0, w]);
+
+  var xAxis = d3.axisBottom()
+                .scale(xscale)
+
+  svg.append("g")
+    .attr("transform","translate("+ (vTextSpace - 10) +"," +(h-30) +")")
+    .call(xAxis);
+}
