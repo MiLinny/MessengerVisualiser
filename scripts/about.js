@@ -17,8 +17,8 @@ function updateAbout() {
 
 function makeTable() {
   var table = '<table>';
-  var columns = ['Name', 'Sent Rank', 'Total Sent',  'Received Rank', 'Total Received', 'Avg Word per Message', 'Avg Number of Characters per Word',
-                    'Messages Received', 'Stickers Received', 'Photos Received'];
+  var columns = ['Name', 'Sent Rank', 'Total Sent',  'Received Rank', 'Total Received', 'Number of Days Messaged','Avg Number of Messages Sent per Day',
+  'Avg Number of Messages Received per Day','Avg Word per Message', 'Avg Number of Characters per Word','Messages Received', 'Stickers Received', 'Photos Received'];
   table += '<tr>';
   for (let col of columns) {
     table += '<th>' + col + '</th>';
@@ -34,6 +34,9 @@ function makeTable() {
     table += '<td>' + sentData[nam] + '</td>';
     table += '<td>' + (+rank+1) + '</td>';
     table += '<td>' + rankChats[nam].totalSent + '</td>';
+    table += '<td>' + Object.keys(datesMessagedDaily[nam]).length + '</td>';
+    table += '<td>' + (sentData[nam]/(Object.keys(datesMessagedDaily[nam]).length)).toFixed(2) + '</td>';
+    table += '<td>' + (rankChats[nam].totalSent/(Object.keys(datesMessagedDaily[nam]).length)).toFixed(2) + '</td>';
     table += '<td>' + (rankChats[nam].words/ rankChats[nam].message).toFixed(2) + '</td>';
     table += '<td>' + (rankChats[nam].characters/ rankChats[nam].words).toFixed(2) + '</td>';
     table += '<td>' + rankChats[nam].message + '</td>';

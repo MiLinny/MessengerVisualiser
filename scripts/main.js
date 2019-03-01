@@ -38,6 +38,11 @@ var latest;                   // Date of latest message
 var numMessagesByDate = {};
 var numMessagesCount = 0;
 
+// Dates Messaged 
+var datesMessaged = {};
+var datesMessagedHourly = {};
+var datesMessagedDaily = {};
+
 // Event Listenrs
 // var button = document.getElementById('submit-button');
 // button.addEventListener('click', function() {
@@ -94,6 +99,8 @@ function startup() {
 function rankManipulate(df) {
   // Create datafrane to be used for ranking data
   df.filter(function(msg) {
+
+    // Conditions if Owner messaged
     if (msg.sender == owner) {
 
       var chat = msg.title;
@@ -103,9 +110,36 @@ function rankManipulate(df) {
       sentData[chat] += 1;
     }
 
-
+    // Information involving Dates
     var tmpDate = msg.date;
     var dateKey = new Date(tmpDate.getFullYear(), tmpDate.getMonth(), tmpDate.getDay());
+    var dateHourly = dateKey;
+    dateHourly.setMinutes(0);
+    dateHourly.setSeconds(0);
+    var dateDaily = dateHourly;
+    dateDaily.setHours(0);
+
+    if (datesMessaged[msg.sender] == undefined) {
+      datesMessaged[msg.sender] = {};
+      datesMessagedHourly[msg.sender] = {};
+      datesMessagedDaily[msg.sender] = {};
+    }
+
+    if (datesMessaged[msg.sender][dateKey] == undefined) {
+      datesMessaged[msg.sender][dateKey] = 0;
+    }
+
+    if (datesMessagedHourly[msg.sender][dateHourly] == undefined) {
+      datesMessagedHourly[msg.sender][dateHourly] = 0;
+    }
+
+    if (datesMessagedDaily[msg.sender][dateDaily] == undefined) {
+      datesMessagedDaily[msg.sender][dateDaily] = 0;
+    }
+
+    datesMessaged[msg.sender][dateKey] += 1;
+    datesMessagedHourly[msg.sender][dateHourly] += 1;
+    datesMessagedDaily[msg.sender][dateDaily] += 1;
 
     if (earliest == undefined) {
       earliest = dateKey;
@@ -125,6 +159,7 @@ function rankManipulate(df) {
     }
     numMessagesByDate[dateKey] += 1;
 
+    // Information for normal messages
     if (msg.threadType == 'Regular') {
       var name = msg.sender;
       if (rankChats[name] == undefined) {
